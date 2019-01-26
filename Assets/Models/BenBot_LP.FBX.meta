@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: 76eda7e7da34e554db76e8049ad8aba5
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Body_LP
+    100004: Coat_LP
+    100006: Eyes_LP
+    100008: Feet_LP
+    100010: Fingies_LP
+    100012: Forearm_LP
+    100014: Hand01_LP
+    100016: Hand02_LP
+    100018: Head_LP
+    100020: Knees_LP
+    100022: Knuckles_LP
+    100024: Legs_LP
+    100026: Neck_LP
+    100028: Shorts_LP
+    100030: Thighs_LP
+    100032: Thumb_LP
+    100034: ThumbTip_LP
+    100036: Waist_LP
+    100038: Wrist_LP
+    400000: //RootNode
+    400002: Body_LP
+    400004: Coat_LP
+    400006: Eyes_LP
+    400008: Feet_LP
+    400010: Fingies_LP
+    400012: Forearm_LP
+    400014: Hand01_LP
+    400016: Hand02_LP
+    400018: Head_LP
+    400020: Knees_LP
+    400022: Knuckles_LP
+    400024: Legs_LP
+    400026: Neck_LP
+    400028: Shorts_LP
+    400030: Thighs_LP
+    400032: Thumb_LP
+    400034: ThumbTip_LP
+    400036: Waist_LP
+    400038: Wrist_LP
+    2100000: 01 - Default
+    2300000: Body_LP
+    2300002: Coat_LP
+    2300004: Eyes_LP
+    2300006: Feet_LP
+    2300008: Fingies_LP
+    2300010: Forearm_LP
+    2300012: Hand01_LP
+    2300014: Hand02_LP
+    2300016: Head_LP
+    2300018: Knees_LP
+    2300020: Knuckles_LP
+    2300022: Legs_LP
+    2300024: Neck_LP
+    2300026: Shorts_LP
+    2300028: Thighs_LP
+    2300030: Thumb_LP
+    2300032: ThumbTip_LP
+    2300034: Waist_LP
+    2300036: Wrist_LP
+    3300000: Body_LP
+    3300002: Coat_LP
+    3300004: Eyes_LP
+    3300006: Feet_LP
+    3300008: Fingies_LP
+    3300010: Forearm_LP
+    3300012: Hand01_LP
+    3300014: Hand02_LP
+    3300016: Head_LP
+    3300018: Knees_LP
+    3300020: Knuckles_LP
+    3300022: Legs_LP
+    3300024: Neck_LP
+    3300026: Shorts_LP
+    3300028: Thighs_LP
+    3300030: Thumb_LP
+    3300032: ThumbTip_LP
+    3300034: Waist_LP
+    3300036: Wrist_LP
+    4300000: Body_LP
+    4300002: Feet_LP
+    4300004: Coat_LP
+    4300006: Shorts_LP
+    4300008: Legs_LP
+    4300010: Knees_LP
+    4300012: Thighs_LP
+    4300014: Waist_LP
+    4300016: Eyes_LP
+    4300018: Head_LP
+    4300020: Neck_LP
+    4300022: Wrist_LP
+    4300024: ThumbTip_LP
+    4300026: Thumb_LP
+    4300028: Fingies_LP
+    4300030: Knuckles_LP
+    4300032: Hand01_LP
+    4300034: Hand02_LP
+    4300036: Forearm_LP
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
