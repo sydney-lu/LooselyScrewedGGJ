@@ -6,12 +6,14 @@ public class SmoothCamera : MonoBehaviour
 {
     public Transform target;
     public Vector3 offset;
+    [Range(1,10)]
+    public float zoom = 1;
 
     private void Start()
     {
         if (target)
         {
-            transform.position = target.position + Quaternion.FromToRotation(Vector3.forward, target.right) * offset;
+            transform.position = target.position + Quaternion.FromToRotation(Vector3.forward, target.right) * offset * zoom;
             transform.LookAt(target);
         }
     }
@@ -23,7 +25,7 @@ public class SmoothCamera : MonoBehaviour
             transform.position = Vector3.Lerp
                 (
                     transform.position,
-                    target.position + Quaternion.FromToRotation(-Vector3.right, target.forward) * offset,
+                    target.position + offset,
                     Time.deltaTime * 8
                 );
             transform.rotation = Quaternion.Lerp

@@ -10,16 +10,6 @@ public class Character : MonoBehaviour
 
     [Header("Other"),SerializeField]
     private PathSpline path;
-    public PathSpline Path
-    {
-        get { return path; }
-        set
-        {
-            path = value;
-            pathLength = path.RoughLength(50);
-        }
-    }
-    private float pathLength;
 
     private Rigidbody m_rb;
     private Vector3 lookForward;
@@ -36,11 +26,7 @@ public class Character : MonoBehaviour
         if (path)
         {
             m_rb = GetComponent<Rigidbody>();
-            if (path)
-            {
-                transform.position = path.GetPoint(splineWeight);
-                pathLength = path.RoughLength(50);
-            }
+            if (path) transform.position = path.GetPoint(splineWeight);
             model = transform.GetChild(0);
 
             Vector3 splinePoint = path.GetPoint(0);
@@ -53,7 +39,7 @@ public class Character : MonoBehaviour
     private void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal");
-        moveDistance = x * Time.deltaTime * moveSpeed / pathLength;
+        moveDistance = x * Time.deltaTime * moveSpeed;
         if (!grounded) moveDistance /= 2;
 
         if (flip == false && moveDistance < 0)
