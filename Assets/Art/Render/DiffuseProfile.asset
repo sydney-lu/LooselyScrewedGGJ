@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profiles:
   - name: Diffusion Profile 1
-    scatteringDistance: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    transmissionTint: {r: 1, g: 1, b: 1, a: 1}
+    scatteringDistance: {r: 1, g: 0.119365565, b: 0, a: 1}
+    transmissionTint: {r: 0.575395, g: 0.5849056, b: 0, a: 1}
     texturingMode: 0
     transmissionMode: 1
-    thicknessRemap: {x: 0, y: 5}
+    thicknessRemap: {x: 3, y: 5}
     worldScale: 1
     ior: 1.4
   - name: Diffusion Profile 2
