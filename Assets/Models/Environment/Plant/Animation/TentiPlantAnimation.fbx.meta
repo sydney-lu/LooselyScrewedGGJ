@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: dba75707391c744cf92a08290bab7e2b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Parrent_01
+    100002: Plant(low)
+    100004: Tent1_01
+    100006: Tent1_02
+    100008: Tent1_03
+    100010: Tent1_04
+    100012: Tent2_01
+    100014: Tent2_02
+    100016: Tent2_03
+    100018: Tent2_04
+    100020: Tent3_01
+    100022: Tent3_02
+    100024: Tent3_03
+    100026: Tent3_04
+    100028: Tent4_01
+    100030: Tent4_02
+    100032: Tent4_03
+    100034: Tent4_04
+    100036: Tent5_01
+    100038: Tent5_02
+    100040: Tent5_03
+    100042: Tent5_04
+    100044: Tent6_01
+    100046: Tent6_02
+    100048: Tent6_03
+    100050: Tent6_04
+    100052: //RootNode
+    400000: Parrent_01
+    400002: Plant(low)
+    400004: Tent1_01
+    400006: Tent1_02
+    400008: Tent1_03
+    400010: Tent1_04
+    400012: Tent2_01
+    400014: Tent2_02
+    400016: Tent2_03
+    400018: Tent2_04
+    400020: Tent3_01
+    400022: Tent3_02
+    400024: Tent3_03
+    400026: Tent3_04
+    400028: Tent4_01
+    400030: Tent4_02
+    400032: Tent4_03
+    400034: Tent4_04
+    400036: Tent5_01
+    400038: Tent5_02
+    400040: Tent5_03
+    400042: Tent5_04
+    400044: Tent6_01
+    400046: Tent6_02
+    400048: Tent6_03
+    400050: Tent6_04
+    400052: //RootNode
+    2100000: Leaves
+    4300000: Plant(low)
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Plant(low)
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -15,7 +15,7 @@ MonoBehaviour:
   profiles:
   - name: Diffusion Profile 1
     scatteringDistance: {r: 1, g: 0.119365565, b: 0, a: 1}
-    transmissionTint: {r: 0.575395, g: 0.5849056, b: 0, a: 1}
+    transmissionTint: {r: 0.8962264, g: 0.08877714, b: 0.28640306, a: 1}
     texturingMode: 0
     transmissionMode: 1
     thicknessRemap: {x: 3, y: 5}
