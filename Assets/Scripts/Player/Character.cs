@@ -9,7 +9,7 @@ public class Character : MonoBehaviour
     public float jumpForce = 5;
 
     [Header("Other")]
-    public BezierSpline surfaceSpline;
+    public PathSpline path;
     public float splineWeight;
 
     private Rigidbody m_rb;
@@ -23,19 +23,19 @@ public class Character : MonoBehaviour
     private void Awake()
     {
         m_rb = GetComponent<Rigidbody>();
-        if (surfaceSpline)
-            transform.position = surfaceSpline.GetPoint(splineWeight);
+        if (path)
+            transform.position = path.GetPoint(splineWeight);
         model = transform.GetChild(0);
 
-        Vector3 splinePoint = surfaceSpline.GetPoint(0);
+        Vector3 splinePoint = path.GetPoint(0);
         transform.position = splinePoint;
-        transform.LookAt(splinePoint + surfaceSpline.GetDirection(splineWeight));
+        transform.LookAt(splinePoint + path.GetDirection(splineWeight));
     }
 
     private void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal");
-        float moveDistance = x * Time.deltaTime * moveSpeed / surfaceSpline.RoughLength();
+        float moveDistance = x * Time.deltaTime * moveSpeed / path.RoughLength();
 
         if (flip == false && moveDistance < 0)
             flip = true;
@@ -46,12 +46,21 @@ public class Character : MonoBehaviour
         if (flip) canMove = !isBlocked(transform.position + Vector3.up * 0.1f, -transform.forward, 0.6f) && !isBlocked(transform.position + Vector3.up * 1.3f, -transform.forward, 0.6f);
         else canMove = !isBlocked(transform.position + Vector3.up * 0.1f, transform.forward, 0.6f) && !isBlocked(transform.position + Vector3.up * 1.3f, transform.forward, 0.6f);
 
-        Debug.Log(canMove);
         if (canMove)
         {
-            Vector3 splinePoint = surfaceSpline.GetPoint(splineWeight + moveDistance);
+            Vector3 splinePoint = path.GetPoint(splineWeight + moveDistance);
             splineWeight += moveDistance;
-            splineWeight = Mathf.Clamp01(splineWeight);
+            if (splineWeight > 1 && path.HasEndPath())
+            {
+                splineWeight = 0;
+                path = path.NextEndPath(transform.position);
+            }
+            else if (splineWeight < 0 && path.HasStartPath())
+            {
+                splineWeight = 1;
+                path = path.NextStartPath(transform.position);
+            }
+            else splineWeight = Mathf.Clamp01(splineWeight);
 
             //Position
             Vector3 currentPosition = transform.position;
@@ -59,7 +68,7 @@ public class Character : MonoBehaviour
             transform.position = newPosition;
 
             //Rotation
-            transform.LookAt(newPosition + surfaceSpline.GetDirection(splineWeight));
+            transform.LookAt(newPosition + path.GetDirection(splineWeight));
         }
         if (flip) lookForward = Vector3.Lerp(lookForward, -transform.forward, Time.deltaTime * 5);
         else lookForward = Vector3.Lerp(lookForward, transform.forward, Time.deltaTime * 5);
@@ -78,18 +87,16 @@ public class Character : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = new Ray(start, direction);
-        Debug.DrawRay(ray.origin, ray.direction, Color.red);
-        if (Physics.Raycast(ray, out hit, range)) 
+        if (Physics.Raycast(ray, out hit, range))
         {
-            Debug.Log(hit.collider.gameObject.name);
-            return true;
+            if (hit.collider.gameObject.isStatic)
+                return true;
         }
         return false;
     }
 
     private void Jump()
     {
-        Debug.Log("Jump");
         grounded = false;
         m_rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
