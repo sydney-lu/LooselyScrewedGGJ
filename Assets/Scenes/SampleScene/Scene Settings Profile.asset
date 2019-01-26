@@ -18,6 +18,7 @@ MonoBehaviour:
   - {fileID: 114555594314116098}
   - {fileID: 114455016360177348}
   - {fileID: 114038414174294550}
+  - {fileID: 114147397265756658}
 --- !u!114 &114038414174294550
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -33,10 +34,10 @@ MonoBehaviour:
   active: 1
   colorMode:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0
   color:
     m_OverrideState: 0
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    m_Value: {r: 0, g: 1, b: 0.002224207, a: 1}
     hdr: 1
     showAlpha: 0
     showEyeDropper: 1
@@ -46,7 +47,7 @@ MonoBehaviour:
     min: 0
     max: 1
   maxFogDistance:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 5000
     min: 0
   mipFogMaxMip:
@@ -80,18 +81,40 @@ MonoBehaviour:
     m_Value: 10
     min: 1
   anisotropy:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 0.47
     min: -1
     max: 1
   globalLightProbeDimmer:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
     min: 0
     max: 1
   enableDistantFog:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
+--- !u!114 &114147397265756658
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4910d90e50201484ba448b791a192696, type: 3}
+  m_Name: VolumetricLightingController
+  m_EditorClassIdentifier: 
+  active: 1
+  depthExtent:
+    m_OverrideState: 1
+    m_Value: 64
+    min: 0.1
+  sliceDistributionUniformity:
+    m_OverrideState: 1
+    m_Value: 0.413
+    min: 0
+    max: 1
 --- !u!114 &114415798331850160
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -157,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2150ee00179b2f4418ea8b21a7e98eea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   colorMode:
     m_OverrideState: 1
     m_Value: 1
@@ -294,4 +317,4 @@ MonoBehaviour:
     m_Value: 2
   fogType:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 3
