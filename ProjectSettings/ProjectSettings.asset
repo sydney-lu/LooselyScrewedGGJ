@@ -611,10 +611,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 43b216f6-edf9-4bea-89bf-4cd85612d80c
+  cloudProjectId: 
   framebufferDepthMemorylessMode: 0
-  projectName: Base
-  organizationId: sydneykimbuulu
+  projectName: 
+  organizationId: 
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
