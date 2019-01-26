@@ -45,10 +45,7 @@ public class BezierSpline : MonoBehaviour
 
         float length = 0;
         for (int i = 0; i < lengthPoints.Count - 1; i++)
-        {
             length += (lengthPoints[i] - lengthPoints[i + 1]).magnitude;
-            Debug.Log(length);
-        }
         return length;
     }
 
