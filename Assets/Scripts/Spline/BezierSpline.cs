@@ -36,6 +36,17 @@ public class BezierSpline : MonoBehaviour
         return points[index];
     }
 
+    public float RoughLength()
+    {
+        float length = 0;
+        for (int i = 0; i < points.Length - 1; i++)
+        {
+            length = (points[i] - points[i + 1]).magnitude;
+        }
+        if (loop) length += (points[0] - points[points.Length - 1]).magnitude;
+        return length;
+    }
+
     public void SetControlPoint(int index, Vector3 point)
     {
         if (index % 3 == 0)
