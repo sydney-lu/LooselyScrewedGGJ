@@ -8,34 +8,53 @@ public class Character : MonoBehaviour
     public float moveSpeed = 1;
     public float jumpForce = 5;
 
-    [Header("Other")]
-    public BezierSpline surfaceSpline;
-    public float splineWeight;
+    [Header("Other"),SerializeField]
+    private PathSpline path;
+    public PathSpline Path
+    {
+        get { return path; }
+        set
+        {
+            path = value;
+            pathLength = path.RoughLength(50);
+        }
+    }
+    private float pathLength;
 
     private Rigidbody m_rb;
-    private Vector3 moveDirection;
     private Vector3 lookForward;
-
     private Transform model;
+
+    private float moveDistance;
+    private float splineWeight;
+
     private bool grounded;
     private bool flip;
 
-    private void Awake()
+    private void Start()
     {
-        m_rb = GetComponent<Rigidbody>();
-        if (surfaceSpline)
-            transform.position = surfaceSpline.GetPoint(splineWeight);
-        model = transform.GetChild(0);
+        if (path)
+        {
+            m_rb = GetComponent<Rigidbody>();
+            if (path)
+            {
+                transform.position = path.GetPoint(splineWeight);
+                pathLength = path.RoughLength(50);
+            }
+            model = transform.GetChild(0);
 
-        Vector3 splinePoint = surfaceSpline.GetPoint(0);
-        transform.position = splinePoint;
-        transform.LookAt(splinePoint + surfaceSpline.GetDirection(splineWeight));
+            Vector3 splinePoint = path.GetPoint(0);
+            transform.position = splinePoint;
+            transform.LookAt(splinePoint + path.GetDirection(splineWeight));
+        }
+        else enabled = false;
     }
 
     private void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal");
-        float moveDistance = x * Time.deltaTime * moveSpeed / surfaceSpline.RoughLength();
+        moveDistance = x * Time.deltaTime * moveSpeed / pathLength;
+        if (!grounded) moveDistance /= 2;
 
         if (flip == false && moveDistance < 0)
             flip = true;
@@ -46,12 +65,22 @@ public class Character : MonoBehaviour
         if (flip) canMove = !isBlocked(transform.position + Vector3.up * 0.1f, -transform.forward, 0.6f) && !isBlocked(transform.position + Vector3.up * 1.3f, -transform.forward, 0.6f);
         else canMove = !isBlocked(transform.position + Vector3.up * 0.1f, transform.forward, 0.6f) && !isBlocked(transform.position + Vector3.up * 1.3f, transform.forward, 0.6f);
 
-        Debug.Log(canMove);
+        grounded = isBlocked(transform.position + Vector3.up * 0.5f, Vector3.down, 0.55f);
         if (canMove)
         {
-            Vector3 splinePoint = surfaceSpline.GetPoint(splineWeight + moveDistance);
+            Vector3 splinePoint = path.GetPoint(splineWeight + moveDistance);
             splineWeight += moveDistance;
-            splineWeight = Mathf.Clamp01(splineWeight);
+            if (splineWeight > 1 && path.HasEndPath())
+            {
+                splineWeight = 0;
+                path = path.NextEndPath(transform.position);
+            }
+            else if (splineWeight < 0 && path.HasStartPath())
+            {
+                splineWeight = 1;
+                path = path.NextStartPath(transform.position);
+            }
+            else splineWeight = Mathf.Clamp01(splineWeight);
 
             //Position
             Vector3 currentPosition = transform.position;
@@ -59,7 +88,7 @@ public class Character : MonoBehaviour
             transform.position = newPosition;
 
             //Rotation
-            transform.LookAt(newPosition + surfaceSpline.GetDirection(splineWeight));
+            transform.LookAt(newPosition + path.GetDirection(splineWeight));
         }
         if (flip) lookForward = Vector3.Lerp(lookForward, -transform.forward, Time.deltaTime * 5);
         else lookForward = Vector3.Lerp(lookForward, transform.forward, Time.deltaTime * 5);
@@ -67,9 +96,8 @@ public class Character : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(lookForward, Vector3.up);
         model.rotation = lookRotation;
 
-        //Vertical
+        //Physics
         m_rb.AddForce(Physics.gravity);
-        grounded = isBlocked(transform.position + Vector3.up * 0.5f, Vector3.down, 0.55f);
         if (grounded && Input.GetButton("Jump"))
             Jump();
     }
@@ -78,18 +106,16 @@ public class Character : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = new Ray(start, direction);
-        Debug.DrawRay(ray.origin, ray.direction, Color.red);
-        if (Physics.Raycast(ray, out hit, range)) 
+        if (Physics.Raycast(ray, out hit, range))
         {
-            Debug.Log(hit.collider.gameObject.name);
-            return true;
+            if (hit.collider.gameObject.isStatic)
+                return true;
         }
         return false;
     }
 
     private void Jump()
     {
-        Debug.Log("Jump");
         grounded = false;
         m_rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
