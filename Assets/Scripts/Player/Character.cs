@@ -33,17 +33,21 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
-        m_rb = GetComponent<Rigidbody>();
         if (path)
         {
-            transform.position = path.GetPoint(splineWeight);
-            pathLength = path.RoughLength(50);
-        }
-        model = transform.GetChild(0);
+            m_rb = GetComponent<Rigidbody>();
+            if (path)
+            {
+                transform.position = path.GetPoint(splineWeight);
+                pathLength = path.RoughLength(50);
+            }
+            model = transform.GetChild(0);
 
-        Vector3 splinePoint = path.GetPoint(0);
-        transform.position = splinePoint;
-        transform.LookAt(splinePoint + path.GetDirection(splineWeight));
+            Vector3 splinePoint = path.GetPoint(0);
+            transform.position = splinePoint;
+            transform.LookAt(splinePoint + path.GetDirection(splineWeight));
+        }
+        else enabled = false;
     }
 
     private void FixedUpdate()
