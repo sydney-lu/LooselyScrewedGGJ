@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 public class BezierSpline : MonoBehaviour
 {
@@ -36,14 +37,18 @@ public class BezierSpline : MonoBehaviour
         return points[index];
     }
 
-    public float RoughLength()
+    public float RoughLength(float accuracy)
     {
+        List<Vector3> lengthPoints = new List<Vector3>();
+        for (int i = 0; i < accuracy; i++)
+            lengthPoints.Add(GetPoint(i / accuracy));
+
         float length = 0;
-        for (int i = 0; i < points.Length - 1; i++)
+        for (int i = 0; i < lengthPoints.Count - 1; i++)
         {
-            length = (points[i] - points[i + 1]).magnitude;
+            length += (lengthPoints[i] - lengthPoints[i + 1]).magnitude;
+            Debug.Log(length);
         }
-        if (loop) length += (points[0] - points[points.Length - 1]).magnitude;
         return length;
     }
 

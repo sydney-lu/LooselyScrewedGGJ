@@ -8,24 +8,37 @@ public class Character : MonoBehaviour
     public float moveSpeed = 1;
     public float jumpForce = 5;
 
-    [Header("Other")]
-    public PathSpline path;
+    [Header("Other"),SerializeField]
+    private PathSpline path;
+    public PathSpline Path
+    {
+        get { return path; }
+        set
+        {
+            path = value;
+            pathLength = path.RoughLength(50);
+        }
+    }
+    private float pathLength;
 
     private Rigidbody m_rb;
-    private Vector3 moveDirection;
     private Vector3 lookForward;
     private Transform model;
 
+    private float moveDistance;
     private float splineWeight;
 
     private bool grounded;
     private bool flip;
 
-    private void Awake()
+    private void Start()
     {
         m_rb = GetComponent<Rigidbody>();
         if (path)
+        {
             transform.position = path.GetPoint(splineWeight);
+            pathLength = path.RoughLength(50);
+        }
         model = transform.GetChild(0);
 
         Vector3 splinePoint = path.GetPoint(0);
@@ -36,7 +49,8 @@ public class Character : MonoBehaviour
     private void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal");
-        float moveDistance = x * Time.deltaTime * moveSpeed / path.RoughLength();
+        moveDistance = x * Time.deltaTime * moveSpeed / pathLength;
+        if (!grounded) moveDistance /= 2;
 
         if (flip == false && moveDistance < 0)
             flip = true;
@@ -47,6 +61,7 @@ public class Character : MonoBehaviour
         if (flip) canMove = !isBlocked(transform.position + Vector3.up * 0.1f, -transform.forward, 0.6f) && !isBlocked(transform.position + Vector3.up * 1.3f, -transform.forward, 0.6f);
         else canMove = !isBlocked(transform.position + Vector3.up * 0.1f, transform.forward, 0.6f) && !isBlocked(transform.position + Vector3.up * 1.3f, transform.forward, 0.6f);
 
+        grounded = isBlocked(transform.position + Vector3.up * 0.5f, Vector3.down, 0.55f);
         if (canMove)
         {
             Vector3 splinePoint = path.GetPoint(splineWeight + moveDistance);
@@ -77,9 +92,8 @@ public class Character : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(lookForward, Vector3.up);
         model.rotation = lookRotation;
 
-        //Vertical
+        //Physics
         m_rb.AddForce(Physics.gravity);
-        grounded = isBlocked(transform.position + Vector3.up * 0.5f, Vector3.down, 0.55f);
         if (grounded && Input.GetButton("Jump"))
             Jump();
     }
