@@ -23,7 +23,7 @@ public class SmoothCamera : MonoBehaviour
             transform.position = Vector3.Lerp
                 (
                     transform.position,
-                    target.position + Quaternion.FromToRotation(Vector3.forward, target.right) * offset,
+                    target.position + Quaternion.FromToRotation(-Vector3.right, target.forward) * offset,
                     Time.deltaTime * 8
                 );
             transform.rotation = Quaternion.Lerp

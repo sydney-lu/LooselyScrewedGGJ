@@ -10,13 +10,14 @@ public class Character : MonoBehaviour
 
     [Header("Other")]
     public PathSpline path;
-    public float splineWeight;
 
     private Rigidbody m_rb;
     private Vector3 moveDirection;
     private Vector3 lookForward;
-
     private Transform model;
+
+    private float splineWeight;
+
     private bool grounded;
     private bool flip;
 
