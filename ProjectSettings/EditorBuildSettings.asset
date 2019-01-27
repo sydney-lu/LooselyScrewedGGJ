@@ -9,14 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 08719d2a02de70a4abfd7afcfc0e64e0
   - enabled: 1
-    path: Assets/Scenes/PlayScene.unity
-    guid: 7c0a9ae8c87a60749a168086a0a08909
-  - enabled: 1
     path: Assets/Scenes/Platformer.unity
     guid: 2675d27a3ef0c1a488036bd30c2ebd75
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: e3ddeb0f19412c74c9e698c97ba6cc86
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 7da89be75feebd2419972d4a146abe83
@@ -27,9 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Credits.unity
     guid: ab42b52a80b97e44495e469e506e6a1d
   - enabled: 1
-    path: Assets/Scenes/CavePuzzle.unity
-    guid: 6f7f34c533d6da040823ec667114d763
-  - enabled: 1
     path: Assets/Scenes/Resolution.unity
     guid: 71ac4b0e0c02ee34089d61a5207e307e
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 982fe33c83d3131448f3a6f058953c07
   m_configObjects: {}

@@ -64,11 +64,11 @@ public class Buttons : MonoBehaviour
 
     public void OnQuitPress()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+    #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+    #else
+            Application.Quit();
+    #endif
     }
 
     public void OnSlide(float VolumeValue)

@@ -209,12 +209,9 @@ public class Character : MonoBehaviour
 
         if (col.gameObject.name == "Ship")
         {
-            if (col.gameObject.name == "ShipWinCollider")
+            if (ObjectivesCollected == ObjectsNeeded)
             {
-                if (ObjectivesCollected == ObjectsNeeded)
-                {
-                    SceneManager.LoadScene(SceneToMove);
-                }
+                SceneManager.LoadScene(SceneToMove);
             }
 
             if (col.gameObject.name == "KillFloor")
