@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Character : MonoBehaviour
 {
@@ -21,6 +22,11 @@ public class Character : MonoBehaviour
     private bool grounded;
     private bool flip;
 
+    private int ObjectivesCollected;
+    public int ObjectsNeeded;
+
+    public string SceneToMove;
+
     private void Start()
     {
         if (path)
@@ -34,6 +40,11 @@ public class Character : MonoBehaviour
             transform.LookAt(splinePoint + path.GetDirection(splineWeight));
         }
         else enabled = false;
+
+        ObjectivesCollected = 0;
+
+        if (ObjectsNeeded <= 0) ObjectsNeeded = 1;
+        if (SceneToMove == "") SceneToMove = "Platformer";
     }
 
     private void FixedUpdate()
@@ -104,5 +115,30 @@ public class Character : MonoBehaviour
     {
         grounded = false;
         m_rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.name == "Objective")
+        {
+            ++ObjectivesCollected;
+            Destroy(col.gameObject);
+        }
+
+        if (col.gameObject.name == "ShipWinCollider")
+        {
+            if (ObjectivesCollected == ObjectsNeeded)
+            {
+                Debug.Log("You Win");
+                SceneManager.LoadScene(SceneToMove);
+            }
+        }
+
+        if(col.gameObject.name == "KillFloor")
+        {
+            Scene m_Scene = SceneManager.GetActiveScene();
+
+            SceneManager.LoadScene(m_Scene.name);
+        }
     }
 }

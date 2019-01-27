@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public static PlayerController player;
 
     private string m_mainMenuScene = "MainMenu";
-    private string m_playScene = "PlayScene";
+    private string m_playScene = "Platformer";
     
     public Canvas m_hudCanvas;
     public Canvas m_pauseCanvas;
@@ -94,11 +94,11 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public static LevelManager levelSpawn;
 
-    private void SpawnPlayer()
-    {
-        Transform spawnTransfrom = levelSpawn ? levelSpawn.GetNextSpawn() : transform;
-        Instantiate(playerPrefab, spawnTransfrom.position, spawnTransfrom.rotation).GetComponent<Actor>();
-    }
+    //private void SpawnPlayer()
+    //{
+    //    Transform spawnTransfrom = levelSpawn ? levelSpawn.GetNextSpawn() : transform;
+    //    Instantiate(playerPrefab, spawnTransfrom.position, spawnTransfrom.rotation).GetComponent<Actor>();
+    //}
 
     public void Quit()
     {
@@ -184,7 +184,7 @@ public class GameManager : MonoBehaviour
         // Base Play Scene 
         else if (scene.name == m_playScene)
         {
-            if (!player) SpawnPlayer();
+            //if (!player) SpawnPlayer();
             ToggleCursor(false);
         }
 
