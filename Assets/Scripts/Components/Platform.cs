@@ -37,12 +37,17 @@ public class Platform : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider collision)
-    {
+    {   
         collision.gameObject.transform.parent = transform;
     }
 
     private void OnTriggerExit(Collider collision)
     {
         collision.gameObject.transform.parent = null;
+    }
+
+    public void HasPower(bool power)
+    {
+        hasPower = power;
     }
 }

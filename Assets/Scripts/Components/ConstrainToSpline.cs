@@ -9,7 +9,8 @@ public class ConstrainToSpline : MonoBehaviour
 
     private void Update()
     {
-        Vector3 pathpoint = path.GetPoint(splineWeight);
-        transform.position = new Vector3(pathpoint.x, transform.position.y, pathpoint.z);
+        Vector3 splinePoint = path.GetPoint(splineWeight);
+        Vector3 newPosition = new Vector3(splinePoint.x, transform.position.y, splinePoint.z);
+        transform.position = newPosition;
     }
 }

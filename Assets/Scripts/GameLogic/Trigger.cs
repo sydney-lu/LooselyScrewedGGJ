@@ -37,7 +37,7 @@ public class Trigger : MonoBehaviour
         set { conditions = value; }
     }
 
-    [SerializeField, HideInInspector]
+    [SerializeField]
     protected UnityEvent result;
     public UnityEvent Result
     {

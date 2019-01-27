@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Character : MonoBehaviour
 {
@@ -33,10 +34,14 @@ public class Character : MonoBehaviour
 
     private float moveDistance;
 
+    private int ObjectivesCollected;
+    public int ObjectsNeeded;
+
     private Vector3 pushDirection;
     private bool pushing = false;
     private ConstrainToSpline pushObject;
 
+    public string SceneToMove;
     private bool grounded;
     private bool flip;
 
@@ -86,10 +91,11 @@ public class Character : MonoBehaviour
             anim.SetFloat("Pull", dot * x);
             moveDistance *= 0.5f;
             if (canMove) pushObject.splineWeight += moveDistance;
-            if (!grounded || Mathf.Abs(transform.position.y - pushObject.transform.position.y) > 3)
+            if (Mathf.Abs(transform.position.y - pushObject.transform.position.y) > 3)
                 StopPushing();
         }
-        
+        Debug.Log(canMove);
+
         grounded = GroundCheck(transform.position + Vector3.up * 0.5f + Vector3.forward * 0.2f, 0.55f)
             && GroundCheck(transform.position + Vector3.up * 0.5f - Vector3.forward * 0.2f, 0.55f);
             
@@ -111,8 +117,7 @@ public class Character : MonoBehaviour
             else splineWeight = Mathf.Clamp01(splineWeight);
 
             //Position
-            Vector3 currentPosition = transform.position;
-            Vector3 newPosition = new Vector3(splinePoint.x, currentPosition.y, splinePoint.z);
+            Vector3 newPosition = new Vector3(splinePoint.x, transform.position.y, splinePoint.z);
             transform.position = newPosition;
 
             //Rotation
@@ -169,6 +174,30 @@ public class Character : MonoBehaviour
                 if (pushing) StopPushing();
                 else StartPushing(other.transform);
             }
+        }
+    }
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.name == "Objective")
+        {
+            ++ObjectivesCollected;
+            Destroy(col.gameObject);
+        }
+
+        if (col.gameObject.name == "ShipWinCollider")
+        {
+            if (ObjectivesCollected == ObjectsNeeded)
+            {
+                Debug.Log("You Win");
+                SceneManager.LoadScene(SceneToMove);
+            }
+        }
+
+        if (col.gameObject.name == "KillFloor")
+        {
+            Scene m_Scene = SceneManager.GetActiveScene();
+
+            SceneManager.LoadScene(m_Scene.name);
         }
     }
 
