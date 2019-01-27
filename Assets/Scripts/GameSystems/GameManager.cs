@@ -94,11 +94,11 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public static LevelManager levelSpawn;
 
-    //private void SpawnPlayer()
-    //{
-    //    Transform spawnTransfrom = levelSpawn ? levelSpawn.GetNextSpawn() : transform;
-    //    Instantiate(playerPrefab, spawnTransfrom.position, spawnTransfrom.rotation).GetComponent<Actor>();
-    //}
+    private void SpawnPlayer()
+    {
+        Transform spawnTransfrom = levelSpawn ? levelSpawn.GetNextSpawn() : transform;
+        Instantiate(playerPrefab, spawnTransfrom.position, spawnTransfrom.rotation).GetComponent<Actor>();
+    }
 
     public void Quit()
     {
@@ -137,6 +137,7 @@ public class GameManager : MonoBehaviour
     public void LoadScene(string name)
     {
         SceneManager.LoadScene(name);
+        m_hudCanvas.enabled = !m_hudCanvas.enabled;
     }
     public void LoadScene(int index)
     {
@@ -184,7 +185,7 @@ public class GameManager : MonoBehaviour
         // Base Play Scene 
         else if (scene.name == m_playScene)
         {
-            //if (!player) SpawnPlayer();
+            if (!player) SpawnPlayer();
             ToggleCursor(false);
         }
 
