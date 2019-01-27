@@ -208,8 +208,9 @@ public class Character : MonoBehaviour
             Destroy(col.gameObject);
         }
 
-        if (col.gameObject.name == "ShipWinCollider")
+        if (col.gameObject.name == "Ship")
         {
+            Debug.Log("You're at the ship");
             if (ObjectivesCollected == ObjectsNeeded)
             {
                 Debug.Log("You Win");
@@ -217,7 +218,7 @@ public class Character : MonoBehaviour
             }
         }
 
-        if(col.gameObject.name == "KillFloor")
+        if (col.gameObject.name == "KillFloor")
         {
             Scene m_Scene = SceneManager.GetActiveScene();
 
