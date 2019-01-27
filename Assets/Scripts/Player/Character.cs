@@ -38,6 +38,10 @@ public class Character : MonoBehaviour
     private bool pushing = false;
     private Transform pushObject;
 
+    private int ObjectivesCollected;
+    public int ObjectsNeeded;
+
+    public string SceneToMove;
     private bool grounded;
     private bool flip;
 
@@ -210,10 +214,10 @@ public class Character : MonoBehaviour
 
         if (col.gameObject.name == "Ship")
         {
-            Debug.Log("You're at the ship");
+        if (col.gameObject.name == "ShipWinCollider")
+        {
             if (ObjectivesCollected == ObjectsNeeded)
             {
-                Debug.Log("You Win");
                 SceneManager.LoadScene(SceneToMove);
             }
         }
