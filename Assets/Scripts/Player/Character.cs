@@ -9,7 +9,7 @@ public class Character : MonoBehaviour
     public float moveSpeed = 1;
     public float jumpForce = 5;
 
-    [Header("Other"),SerializeField]
+    [Header("Other"), SerializeField]
     private PathSpline path;
     public PathSpline Path
     {
@@ -23,7 +23,7 @@ public class Character : MonoBehaviour
             }
         }
     }
-    [Range(0,1)]
+    [Range(0, 1)]
     public float splineWeight;
     private float pathLength;
 
@@ -44,11 +44,6 @@ public class Character : MonoBehaviour
     public string SceneToMove;
     private bool grounded;
     private bool flip;
-
-    private int ObjectivesCollected;
-    public int ObjectsNeeded;
-
-    public string SceneToMove;
 
     private void Start()
     {
@@ -103,10 +98,10 @@ public class Character : MonoBehaviour
             if (!grounded || Mathf.Abs(transform.position.y - pushObject.position.y) > 3)
                 StopPushing();
         }
-        
+
         grounded = GroundCheck(transform.position + Vector3.up * 0.5f + Vector3.forward * 0.2f, 0.55f)
             && GroundCheck(transform.position + Vector3.up * 0.5f - Vector3.forward * 0.2f, 0.55f);
-            
+
         anim.SetBool("Grounded", grounded);
         if (canMove)
         {
@@ -214,19 +209,20 @@ public class Character : MonoBehaviour
 
         if (col.gameObject.name == "Ship")
         {
-        if (col.gameObject.name == "ShipWinCollider")
-        {
-            if (ObjectivesCollected == ObjectsNeeded)
+            if (col.gameObject.name == "ShipWinCollider")
             {
-                SceneManager.LoadScene(SceneToMove);
+                if (ObjectivesCollected == ObjectsNeeded)
+                {
+                    SceneManager.LoadScene(SceneToMove);
+                }
             }
-        }
 
-        if (col.gameObject.name == "KillFloor")
-        {
-            Scene m_Scene = SceneManager.GetActiveScene();
+            if (col.gameObject.name == "KillFloor")
+            {
+                Scene m_Scene = SceneManager.GetActiveScene();
 
-            SceneManager.LoadScene(m_Scene.name);
+                SceneManager.LoadScene(m_Scene.name);
+            }
         }
     }
 }
