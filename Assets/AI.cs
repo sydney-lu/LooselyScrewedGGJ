@@ -46,8 +46,8 @@ public class AI : MonoBehaviour
         jump = Input.GetButtonDown("Jump");
 
         animator.SetBool("bIsJump", jump);
-        if (jump == true)
-            Debug.Log("Animation Jump");
+        if (jump == true) { };
+            //Debug.Log("Animation Jump");
 
         // Mimic perception
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
@@ -58,7 +58,7 @@ public class AI : MonoBehaviour
         {
             if (hit.collider.gameObject.tag == "Player")
             {
-                Debug.Log("The AI saw the player");
+                //Debug.Log("The AI saw the player");
             }
             //Debug.Log(hit.collider.tag);
             // Implement Player Chase here 
@@ -71,7 +71,7 @@ public class AI : MonoBehaviour
     {   // If a value is not set for number of patrol points
         if (PatrolPoints.Length == 0)
         {
-            Debug.Log("Please set the patrol points by setting a value for # of Patrol Points, and the transforms for the patrol points");
+            //Debug.Log("Please set the patrol points by setting a value for # of Patrol Points, and the transforms for the patrol points");
             return;
         }
 
@@ -85,17 +85,17 @@ public class AI : MonoBehaviour
     {
         if (col.gameObject.name == "LatchTarget")
         {
-            Debug.Log("Latched onto an surface you are able to grip.");
+            //Debug.Log("Latched onto an surface you are able to grip.");
             //transform.Translate(LatchLocation.transform);
         }
 
         if (col.gameObject.name == "PickupLocation")
         {
-            Debug.Log("The AI is at Point A!");
+            //Debug.Log("The AI is at Point A!");
 
             if (InventoryStock > 0)
             {
-                Debug.Log("The AI took the thing from Point A!");
+                //Debug.Log("The AI took the thing from Point A!");
                 PickUpPackage();
                 --InventoryStock;
             }
