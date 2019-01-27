@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
@@ -27,4 +28,5 @@ public class CameraController : MonoBehaviour
         Vector3 newPosition = GameManager.player.transform.position.z * Vector3.forward + offset;
         transform.position = Vector3.Lerp(transform.position, newPosition, 5 * Time.deltaTime);
     }
+
 }
