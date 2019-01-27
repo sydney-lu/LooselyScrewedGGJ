@@ -212,8 +212,429 @@ ModelImporter:
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
-    human: []
-    skeleton: []
+    human:
+    - boneName: jnt_BenMaster_01
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenLegLeft_01
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenLegRight_01
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenKneeLeft_01
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenKneeRight_01
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenAnkleLeft_01
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenAnkleRight_01
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenSpine_01
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenSpine_02
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenNeck_01
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenHead_01
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenClavicalLeft_01
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenClavicalRight_01
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenShoulderLeft_01
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenShoulderRight_01
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenElbowLeft_01
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenElbowRight_01
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenHandLeft_01
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenHandRight_01
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenFootLeft_01
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenFootRight_01
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: jnt_BenSpine_03
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: BenBot_Rigged_Posed_01(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ctrl_Master_01
+      parentName: BenBot_Rigged_Posed_01(Clone)
+      position: {x: -0.0028570427, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 45.043743, y: 45.043743, z: 45.043743}
+    - name: Geo
+      parentName: BenBot_Rigged_Posed_01(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Body_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Coat_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Eyes_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 6.6531355e-12, z: -0.00003858776}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Feet_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Fingies_LP
+      parentName: Geo
+      position: {x: 0.000031489606, y: 0.000020467696, z: -0.00005887455}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Forearm_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: -0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Hand01_LP
+      parentName: Geo
+      position: {x: 0.00003146015, y: -0.000028079474, z: -0.0000498024}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Hand02_LP
+      parentName: Geo
+      position: {x: 0.00003711906, y: -0.000033738383, z: -0.00003837307}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Head_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000027905273, z: -0.00003858776}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Knees_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Knuckles_LP
+      parentName: Geo
+      position: {x: 0.000025801239, y: -0.000022420567, z: -0.00006123173}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Legs_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Neck_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000027905273, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Shorts_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Thighs_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Thumb_LP
+      parentName: Geo
+      position: {x: 0.00003146015, y: -0.000028079474, z: -0.0000498024}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: ThumbTip_LP
+      parentName: Geo
+      position: {x: 0.0000065450686, y: -0.000019381809, z: -0.000033159984}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Waist_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: -0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Wrist_LP
+      parentName: Geo
+      position: {x: 0.000022247543, y: -0.000009145889, z: -0.00003689632}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: jnt_BenRoot_01
+      parentName: BenBot_Rigged_Posed_01(Clone)
+      position: {x: -0.0028570427, y: 2.9059951, z: -0.4366619}
+      rotation: {x: -0.09346365, y: 0.7009027, z: -0.09346365, w: 0.7009027}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenMaster_01
+      parentName: jnt_BenRoot_01
+      position: {x: -0.3844678, y: -0.17681737, z: 1.8401946e-16}
+      rotation: {x: 0.09346365, y: -0.7009027, z: 0.09346365, w: 0.7009027}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenLegLeft_01
+      parentName: jnt_BenMaster_01
+      position: {x: -0.15825804, y: -0.037238173, z: 0.005435252}
+      rotation: {x: 0.4313988, y: 0.59986097, z: 0.41423786, w: 0.531478}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenKneeLeft_01
+      parentName: jnt_BenLegLeft_01
+      position: {x: -1.2774137, y: 0.030499637, z: -0.26247674}
+      rotation: {x: 0.97007227, y: 0.24225307, z: -0.010804348, w: 0.012513088}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenAnkleLeft_01
+      parentName: jnt_BenKneeLeft_01
+      position: {x: -1.265083, y: -0.012974295, z: 0.18141775}
+      rotation: {x: 0.8005962, y: 0.59920436, z: -3.6690685e-17, w: -4.902238e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenFootLeft_01
+      parentName: jnt_BenAnkleLeft_01
+      position: {x: -0.27421713, y: 0.048138253, z: -0.023321876}
+      rotation: {x: 0.022007225, y: -0.04001807, z: -0.25616887, w: 0.96555257}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenToeLeft_01
+      parentName: jnt_BenFootLeft_01
+      position: {x: -0.2261976, y: -2.1649348e-17, z: -4.9524478e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenLegRight_01
+      parentName: jnt_BenMaster_01
+      position: {x: 0.195634, y: -0.028680643, z: 0.007170887}
+      rotation: {x: 0.5330456, y: 0.5863777, z: 0.37195304, w: 0.48339897}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenKneeRight_01
+      parentName: jnt_BenLegRight_01
+      position: {x: -1.2824974, y: 0.021483898, z: 0.26094335}
+      rotation: {x: 0.96685815, y: 0.25455776, z: 0.013858471, w: -0.013916006}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenAnkleRight_01
+      parentName: jnt_BenKneeRight_01
+      position: {x: -1.2680072, y: -0.020875491, z: -0.16998973}
+      rotation: {x: 0.74801224, y: 0.66368496, z: 1.8800665e-16, w: 2.1189461e-16}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenFootRight_01
+      parentName: jnt_BenAnkleRight_01
+      position: {x: -0.25586298, y: 0.05057366, z: 0.11580614}
+      rotation: {x: -0.0014825986, y: 0.2076285, z: -0.24309024, w: 0.9475206}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenToeRight_01
+      parentName: jnt_BenFootRight_01
+      position: {x: -0.22233567, y: 0.0063252677, z: 1.312005e-16}
+      rotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenSpine_01
+      parentName: jnt_BenMaster_01
+      position: {x: -0.0016865158, y: 0.24631368, z: 0.012577905}
+      rotation: {x: 0.02837657, y: -0, z: -0, w: 0.9995973}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenSpine_02
+      parentName: jnt_BenSpine_01
+      position: {x: -9.992007e-18, y: 0.3581641, z: -0.013621913}
+      rotation: {x: 0.041539244, y: -0, z: -0, w: 0.9991369}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenSpine_03
+      parentName: jnt_BenSpine_02
+      position: {x: 1.8318679e-17, y: 0.41939375, z: -0.018728305}
+      rotation: {x: -0.027177688, y: 0, z: -0, w: 0.99963063}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenClavicalLeft_01
+      parentName: jnt_BenSpine_03
+      position: {x: -0.18241878, y: 0.16573091, z: 0.07778613}
+      rotation: {x: -8.326673e-17, y: -2.0816682e-17, z: -8.326673e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenShoulderLeft_01
+      parentName: jnt_BenClavicalLeft_01
+      position: {x: -0.100811735, y: 0.042244013, z: -0.1340165}
+      rotation: {x: 0.22840063, y: 0.23590189, z: 0.21970193, w: 0.9186482}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenElbowLeft_01
+      parentName: jnt_BenShoulderLeft_01
+      position: {x: -0.51926273, y: -0.529892, z: -0.09684584}
+      rotation: {x: -0.20776947, y: 0.30857524, z: -0.06514264, w: 0.92594254}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenHandLeft_01
+      parentName: jnt_BenElbowLeft_01
+      position: {x: -0.6435181, y: -0.62784696, z: -0.06489576}
+      rotation: {x: -0.25304073, y: -0.11660717, z: 0.35777402, w: 0.89127487}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenFingerLeft_01
+      parentName: jnt_BenHandLeft_01
+      position: {x: -0.38536006, y: 9.913891e-18, z: -0.023842074}
+      rotation: {x: 0, y: 0, z: -0.37131342, w: 0.9285076}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenClavicalRight_01
+      parentName: jnt_BenSpine_03
+      position: {x: 0.18579651, y: 0.1657215, z: 0.077776805}
+      rotation: {x: -2.7755576e-17, y: 0, z: 2.7755576e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenShoulderRight_01
+      parentName: jnt_BenClavicalRight_01
+      position: {x: 0.10079999, y: 0.042239998, z: -0.13400717}
+      rotation: {x: 0.31200072, y: -0.19124287, z: -0.2177251, w: 0.904808}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenElbowRight_01
+      parentName: jnt_BenShoulderRight_01
+      position: {x: 0.51927, y: -0.52989, z: -0.096842825}
+      rotation: {x: -0.24435183, y: -0.4059382, z: 0.046972718, w: 0.87937474}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenHandRight_01
+      parentName: jnt_BenElbowRight_01
+      position: {x: 0.64353, y: -0.62784, z: -0.064890005}
+      rotation: {x: 0.19693352, y: 0.815156, z: -0.5186131, w: -0.16666849}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenFingerRight_01
+      parentName: jnt_BenHandRight_01
+      position: {x: -0.3731094, y: 1.2536522e-16, z: 0.023976877}
+      rotation: {x: 0.37581158, y: 0.9266961, z: 7.975559e-17, w: -3.373195e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenNeck_01
+      parentName: jnt_BenSpine_03
+      position: {x: 1.6653344e-17, y: 0.34147888, z: -0.0073832152}
+      rotation: {x: 0.0074306903, y: -0, z: -0, w: 0.9999724}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenHead_01
+      parentName: jnt_BenNeck_01
+      position: {x: 4.038436e-17, y: 0.62529594, z: 0.09674011}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5

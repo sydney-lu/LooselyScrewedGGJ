@@ -7,7 +7,6 @@ public class PathSpline : BezierSpline
 {
     public List<PathSpline> StartPaths;
     public List<PathSpline> EndPaths;
-
     private void Start()
     {
         SortPaths();
@@ -21,6 +20,7 @@ public class PathSpline : BezierSpline
             {
                 PathSpline temp = StartPaths[i];
                 StartPaths[i] = StartPaths[i + 1];
+                StartPaths[i + 1] = temp;
             }
         }
 
@@ -30,6 +30,7 @@ public class PathSpline : BezierSpline
             {
                 PathSpline temp = EndPaths[i];
                 EndPaths[i] = EndPaths[i + 1];
+                EndPaths[i + 1] = temp;
             }
         }
     }

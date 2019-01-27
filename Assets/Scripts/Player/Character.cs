@@ -11,13 +11,32 @@ public class Character : MonoBehaviour
 
     [Header("Other"),SerializeField]
     private PathSpline path;
+    public PathSpline Path
+    {
+        get { return path; }
+        set
+        {
+            if (path != value)
+            {
+                path = value;
+                pathLength = path.RoughLength(50);
+            }
+        }
+    }
+    [Range(0,1)]
+    public float splineWeight;
+    private float pathLength;
 
+    private Animator anim;
     private Rigidbody m_rb;
     private Vector3 lookForward;
     private Transform model;
 
     private float moveDistance;
-    private float splineWeight;
+
+    private Vector3 pushDirection;
+    private bool pushing = false;
+    private Transform pushObject;
 
     private bool grounded;
     private bool flip;
@@ -32,10 +51,15 @@ public class Character : MonoBehaviour
         if (path)
         {
             m_rb = GetComponent<Rigidbody>();
-            if (path) transform.position = path.GetPoint(splineWeight);
+            anim = GetComponentInChildren<Animator>();
+            if (path)
+            {
+                transform.position = path.GetPoint(splineWeight);
+                pathLength = path.RoughLength(50);
+            }
             model = transform.GetChild(0);
 
-            Vector3 splinePoint = path.GetPoint(0);
+            Vector3 splinePoint = path.GetPoint(splineWeight);
             transform.position = splinePoint;
             transform.LookAt(splinePoint + path.GetDirection(splineWeight));
         }
@@ -50,19 +74,36 @@ public class Character : MonoBehaviour
     private void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal");
-        moveDistance = x * Time.deltaTime * moveSpeed;
-        if (!grounded) moveDistance /= 2;
+        anim.SetFloat("Movment", Mathf.Abs(x));
 
-        if (flip == false && moveDistance < 0)
-            flip = true;
-        else if (flip == true && moveDistance > 0)
-            flip = false;
+        moveDistance = x * Time.deltaTime * moveSpeed / pathLength;
+
+        if (!pushing)
+        {
+            if (flip == false && moveDistance < 0)
+                flip = true;
+            else if (flip == true && moveDistance > 0)
+                flip = false;
+        }
 
         bool canMove = true;
-        if (flip) canMove = !isBlocked(transform.position + Vector3.up * 0.1f, -transform.forward, 0.6f) && !isBlocked(transform.position + Vector3.up * 1.3f, -transform.forward, 0.6f);
-        else canMove = !isBlocked(transform.position + Vector3.up * 0.1f, transform.forward, 0.6f) && !isBlocked(transform.position + Vector3.up * 1.3f, transform.forward, 0.6f);
+        if (flip) canMove = !isBlocked(transform.position + Vector3.up * 0.1f, -transform.forward, 0.8f) && !isBlocked(transform.position + Vector3.up * 2, -transform.forward, 0.8f);
+        else canMove = !isBlocked(transform.position + Vector3.up * 0.1f, transform.forward, 0.8f) && !isBlocked(transform.position + Vector3.up * 2, transform.forward, 0.8f);
 
-        grounded = isBlocked(transform.position + Vector3.up * 0.5f, Vector3.down, 0.55f);
+        if (!grounded) moveDistance *= 0.75f;
+        if (pushing)
+        {
+            float dot = Vector3.Dot(transform.forward, pushDirection);
+            anim.SetFloat("Pull", dot * x);
+            moveDistance *= 0.5f;
+            if (!grounded || Mathf.Abs(transform.position.y - pushObject.position.y) > 3)
+                StopPushing();
+        }
+        
+        grounded = GroundCheck(transform.position + Vector3.up * 0.5f + Vector3.forward * 0.2f, 0.55f)
+            && GroundCheck(transform.position + Vector3.up * 0.5f - Vector3.forward * 0.2f, 0.55f);
+            
+        anim.SetBool("Grounded", grounded);
         if (canMove)
         {
             Vector3 splinePoint = path.GetPoint(splineWeight + moveDistance);
@@ -70,12 +111,12 @@ public class Character : MonoBehaviour
             if (splineWeight > 1 && path.HasEndPath())
             {
                 splineWeight = 0;
-                path = path.NextEndPath(transform.position);
+                Path = path.NextEndPath(transform.position);
             }
             else if (splineWeight < 0 && path.HasStartPath())
             {
                 splineWeight = 1;
-                path = path.NextStartPath(transform.position);
+                Path = path.NextStartPath(transform.position);
             }
             else splineWeight = Mathf.Clamp01(splineWeight);
 
@@ -92,6 +133,7 @@ public class Character : MonoBehaviour
 
         Quaternion lookRotation = Quaternion.LookRotation(lookForward, Vector3.up);
         model.rotation = lookRotation;
+        model.localPosition = Vector3.zero;
 
         //Physics
         m_rb.AddForce(Physics.gravity);
@@ -103,11 +145,22 @@ public class Character : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = new Ray(start, direction);
+        Debug.DrawRay(ray.origin, ray.direction, Color.red);
         if (Physics.Raycast(ray, out hit, range))
         {
-            if (hit.collider.gameObject.isStatic)
+            if (hit.transform != pushObject)
                 return true;
         }
+        return false;
+    }
+
+    private bool GroundCheck(Vector3 start, float range)
+    {
+        RaycastHit hit;
+        Ray ray = new Ray(start, Vector3.down);
+        Debug.DrawRay(ray.origin, ray.direction, Color.red);
+        if (Physics.Raycast(ray, out hit, range))
+            return true;
         return false;
     }
 
@@ -115,6 +168,36 @@ public class Character : MonoBehaviour
     {
         grounded = false;
         m_rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        anim.SetTrigger("Jump");
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pushable"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (pushing) StopPushing();
+                else StartPushing(other.transform);
+            }
+        }
+    }
+
+    private void StartPushing(Transform other)
+    {
+        Debug.Log("StartPushing");
+        pushDirection = transform.forward;
+        pushObject = other;
+        pushObject.parent = transform;
+        pushing = true;
+        anim.SetBool("Push", true);
+    }
+
+    private void StopPushing()
+    {
+        Debug.Log("StopPushing");
+        pushObject.parent = null;
+        pushing = false;
+        anim.SetBool("Push", false);
     }
 
     private void OnTriggerEnter(Collider col)
