@@ -154,7 +154,27 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
+      copied configuration does not match position in animation file:\n\t'jnt_BenLegLeft_01'
+      : position error = 37.011524 mm\n\t'jnt_BenKneeLeft_01' : position error = 296.795502
+      mm\n\t'jnt_BenAnkleLeft_01' : position error = 290.796387 mm\n\t'jnt_BenFootLeft_01'
+      : position error = 66.426468 mm\n\t'jnt_BenToeLeft_01' : position error = 51.465424
+      mm\n\t'jnt_BenLegRight_01' : position error = 45.016773 mm\n\t'jnt_BenKneeRight_01'
+      : position error = 297.817841 mm\n\t'jnt_BenAnkleRight_01' : position error
+      = 291.121979 mm\n\t'jnt_BenFootRight_01' : position error = 79.778618 mm\n\t'jnt_BenToeRight_01'
+      : position error = 50.607269 mm\n\t'jnt_BenSpine_01' : position error = 56.116554
+      mm\n\t'jnt_BenSpine_02' : position error = 82.021378 mm\n\t'jnt_BenSpine_03'
+      : position error = 97.145424 mm\n\t'jnt_BenClavicalLeft_01' : position error
+      = 58.802567 mm\n\t'jnt_BenShoulderLeft_01' : position error = 39.347843 mm\n\t'jnt_BenElbowLeft_01'
+      : position error = 170.232712 mm\n\t'jnt_BenHandLeft_01' : position error =
+      205.089661 mm\n\t'jnt_BenClavicalRight_01' : position error = 59.345505 mm\n\t'jnt_BenShoulderRight_01'
+      : position error = 39.344410 mm\n\t'jnt_BenElbowRight_01' : position error =
+      170.233444 mm\n\t'jnt_BenHandRight_01' : position error = 205.090454 mm\n\t'jnt_BenNeck_01'
+      : position error = 76.715828 mm\n\t'jnt_BenHead_01' : position error = 143.962280
+      mm\nCopied Avatar Rig Configuration mis-match. Inbetween bone rotation in copied
+      configuration does not match rotation in animation file:\n\t'jnt_BenFootLeft_01'
+      : rotation error = 20.434053 deg\n\t'jnt_BenFootRight_01' : rotation error =
+      49.270935 deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar to
@@ -183,14 +203,14 @@ ModelImporter:
       lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
-      level: 0
+      level: -0.75
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1

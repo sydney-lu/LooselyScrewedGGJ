@@ -42,6 +42,7 @@ public class Character : MonoBehaviour
         if (path)
         {
             m_rb = GetComponent<Rigidbody>();
+            anim = GetComponentInChildren<Animator>();
             if (path)
             {
                 transform.position = path.GetPoint(splineWeight);
@@ -59,10 +60,10 @@ public class Character : MonoBehaviour
     private void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal");
-        anim.SetFloat("Movment", x);
+        anim.SetFloat("Movment", Mathf.Abs(x));
 
         moveDistance = x * Time.deltaTime * moveSpeed / pathLength;
-        if (!grounded) moveDistance /= 2;
+        if (!grounded) moveDistance /= 1.5f;
 
         if (flip == false && moveDistance < 0)
             flip = true;
@@ -73,7 +74,8 @@ public class Character : MonoBehaviour
         if (flip) canMove = !isBlocked(transform.position + Vector3.up * 0.1f, -transform.forward, 0.6f) && !isBlocked(transform.position + Vector3.up * 1.3f, -transform.forward, 0.6f);
         else canMove = !isBlocked(transform.position + Vector3.up * 0.1f, transform.forward, 0.6f) && !isBlocked(transform.position + Vector3.up * 1.3f, transform.forward, 0.6f);
 
-        grounded = isBlocked(transform.position + Vector3.up * 0.5f, Vector3.down, 0.55f);
+        grounded = isBlocked(transform.position + Vector3.up * 0.5f + Vector3.forward * 0.2f, Vector3.down, 0.55f)
+            && isBlocked(transform.position + Vector3.up * 0.5f - Vector3.forward * 0.2f, Vector3.down, 0.55f);
         anim.SetBool("Grounded", grounded);
         if (canMove)
         {
@@ -104,6 +106,7 @@ public class Character : MonoBehaviour
 
         Quaternion lookRotation = Quaternion.LookRotation(lookForward, Vector3.up);
         model.rotation = lookRotation;
+        model.localPosition = Vector3.zero;
 
         //Physics
         m_rb.AddForce(Physics.gravity);
@@ -127,5 +130,6 @@ public class Character : MonoBehaviour
     {
         grounded = false;
         m_rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        anim.SetTrigger("Jump");
     }
 }

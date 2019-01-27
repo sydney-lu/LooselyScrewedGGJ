@@ -121,6 +121,7 @@ ModelImporter:
     4300036: Forearm_LP
     7400000: BenBot_Jump
     7400002: BenBot_Land
+    7400004: BenBot_Air
     9500000: //RootNode
     13700000: Body_LP
     13700002: Coat_LP
@@ -155,7 +156,26 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
+      copied configuration does not match position in animation file:\n\t'jnt_BenLegLeft_01'
+      : position error = 37.011524 mm\n\t'jnt_BenKneeLeft_01' : position error = 296.795502
+      mm\n\t'jnt_BenAnkleLeft_01' : position error = 290.796387 mm\n\t'jnt_BenFootLeft_01'
+      : position error = 63.566929 mm\n\t'jnt_BenToeLeft_01' : position error = 51.465424
+      mm\n\t'jnt_BenLegRight_01' : position error = 45.016773 mm\n\t'jnt_BenKneeRight_01'
+      : position error = 297.817841 mm\n\t'jnt_BenAnkleRight_01' : position error
+      = 291.121979 mm\n\t'jnt_BenFootRight_01' : position error = 65.869781 mm\n\t'jnt_BenToeRight_01'
+      : position error = 50.607269 mm\n\t'jnt_BenSpine_01' : position error = 56.116554
+      mm\n\t'jnt_BenSpine_02' : position error = 81.549805 mm\n\t'jnt_BenSpine_03'
+      : position error = 95.517174 mm\n\t'jnt_BenClavicalLeft_01' : position error
+      = 58.802567 mm\n\t'jnt_BenShoulderLeft_01' : position error = 39.347843 mm\n\t'jnt_BenElbowLeft_01'
+      : position error = 170.232712 mm\n\t'jnt_BenHandLeft_01' : position error =
+      205.089661 mm\n\t'jnt_BenClavicalRight_01' : position error = 59.345505 mm\n\t'jnt_BenShoulderRight_01'
+      : position error = 39.344410 mm\n\t'jnt_BenElbowRight_01' : position error =
+      170.233444 mm\n\t'jnt_BenHandRight_01' : position error = 205.090454 mm\n\t'jnt_BenNeck_01'
+      : position error = 77.712723 mm\n\t'jnt_BenHead_01' : position error = 143.962280
+      mm\nCopied Avatar Rig Configuration mis-match. Inbetween bone rotation in copied
+      configuration does not match rotation in animation file:\n\t'jnt_BenFootRight_01'
+      : rotation error = 12.131656 deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar to
@@ -186,7 +206,7 @@ ModelImporter:
       lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 0
-      level: 0
+      level: -0.65
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
@@ -223,6 +243,34 @@ ModelImporter:
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: BenBot_Air
+      takeName: Take 001
+      firstFrame: 24.100002
+      lastFrame: 37.2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
