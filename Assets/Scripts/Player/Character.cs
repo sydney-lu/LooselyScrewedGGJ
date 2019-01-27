@@ -10,13 +10,27 @@ public class Character : MonoBehaviour
 
     [Header("Other"),SerializeField]
     private PathSpline path;
+    public PathSpline Path
+    {
+        get { return path; }
+        set
+        {
+            if (path != value)
+            {
+                path = value;
+                pathLength = path.RoughLength(50);
+            }
+        }
+    }
+    [Range(0,1)]
+    public float splineWeight;
+    private float pathLength;
 
     private Rigidbody m_rb;
     private Vector3 lookForward;
     private Transform model;
 
     private float moveDistance;
-    private float splineWeight;
 
     private bool grounded;
     private bool flip;
@@ -26,10 +40,14 @@ public class Character : MonoBehaviour
         if (path)
         {
             m_rb = GetComponent<Rigidbody>();
-            if (path) transform.position = path.GetPoint(splineWeight);
+            if (path)
+            {
+                transform.position = path.GetPoint(splineWeight);
+                pathLength = path.RoughLength(50);
+            }
             model = transform.GetChild(0);
 
-            Vector3 splinePoint = path.GetPoint(0);
+            Vector3 splinePoint = path.GetPoint(splineWeight);
             transform.position = splinePoint;
             transform.LookAt(splinePoint + path.GetDirection(splineWeight));
         }
@@ -39,7 +57,7 @@ public class Character : MonoBehaviour
     private void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal");
-        moveDistance = x * Time.deltaTime * moveSpeed;
+        moveDistance = x * Time.deltaTime * moveSpeed / pathLength;
         if (!grounded) moveDistance /= 2;
 
         if (flip == false && moveDistance < 0)
@@ -59,12 +77,12 @@ public class Character : MonoBehaviour
             if (splineWeight > 1 && path.HasEndPath())
             {
                 splineWeight = 0;
-                path = path.NextEndPath(transform.position);
+                Path = path.NextEndPath(transform.position);
             }
             else if (splineWeight < 0 && path.HasStartPath())
             {
                 splineWeight = 1;
-                path = path.NextStartPath(transform.position);
+                Path = path.NextStartPath(transform.position);
             }
             else splineWeight = Mathf.Clamp01(splineWeight);
 
