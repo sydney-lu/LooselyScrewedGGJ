@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -646,7 +646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517578, y: -146.79999}
+  m_AnchoredPosition: {x: -0.000030517578, y: -175}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &579080479
@@ -843,7 +843,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1799889502605345654, guid: f082bbf5a8808a54a84082146e5811f3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f082bbf5a8808a54a84082146e5811f3, type: 3}
 --- !u!1001 &795069898
 PrefabInstance:
@@ -938,7 +939,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 245.00006, y: -141.99997}
+  m_AnchoredPosition: {x: 245.00006, y: -175}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &819110163
@@ -981,8 +982,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 963385171}
-        m_MethodName: Quit
+      - m_Target: {fileID: 963385173}
+        m_MethodName: OnQuitPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1116,18 +1117,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 634130848}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &963385171 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1799889502605345654, guid: f082bbf5a8808a54a84082146e5811f3,
-    type: 3}
-  m_PrefabInstance: {fileID: 634130848}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963385168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a11b6e0669d0f94a9645e4e2a94c2e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &963385173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1260,7 +1249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -262.00003, y: -142}
+  m_AnchoredPosition: {x: -262.00003, y: -175}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998658413
