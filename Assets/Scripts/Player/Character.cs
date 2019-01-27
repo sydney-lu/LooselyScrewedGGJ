@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class Character : MonoBehaviour
 {
     [Header("Movement")]
@@ -26,6 +27,7 @@ public class Character : MonoBehaviour
     public float splineWeight;
     private float pathLength;
 
+    private Animator anim;
     private Rigidbody m_rb;
     private Vector3 lookForward;
     private Transform model;
@@ -57,6 +59,8 @@ public class Character : MonoBehaviour
     private void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal");
+        anim.SetFloat("Movment", x);
+
         moveDistance = x * Time.deltaTime * moveSpeed / pathLength;
         if (!grounded) moveDistance /= 2;
 
@@ -70,6 +74,7 @@ public class Character : MonoBehaviour
         else canMove = !isBlocked(transform.position + Vector3.up * 0.1f, transform.forward, 0.6f) && !isBlocked(transform.position + Vector3.up * 1.3f, transform.forward, 0.6f);
 
         grounded = isBlocked(transform.position + Vector3.up * 0.5f, Vector3.down, 0.55f);
+        anim.SetBool("Grounded", grounded);
         if (canMove)
         {
             Vector3 splinePoint = path.GetPoint(splineWeight + moveDistance);

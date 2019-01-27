@@ -1,106 +1,104 @@
 fileFormatVersion: 2
-guid: e3ffb88b81876e440a4ffb8c9dac11d8
+guid: a897cc3d0f079d0489d03bc4be27bc68
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     100002: Body_LP
     100004: Coat_LP
-    100006: ctrl_Master_01
-    100008: Eyes_LP
-    100010: Feet_LP
-    100012: Fingies_LP
-    100014: Forearm_LP
-    100016: Geo
-    100018: Hand01_LP
-    100020: Hand02_LP
-    100022: Head_LP
-    100024: jnt_BenAnkleLeft_01
-    100026: jnt_BenAnkleRight_01
-    100028: jnt_BenClavicalLeft_01
-    100030: jnt_BenClavicalRight_01
-    100032: jnt_BenElbowLeft_01
-    100034: jnt_BenElbowRight_01
-    100036: jnt_BenFingerLeft_01
-    100038: jnt_BenFingerRight_01
-    100040: jnt_BenFootLeft_01
-    100042: jnt_BenFootRight_01
-    100044: jnt_BenHandLeft_01
-    100046: jnt_BenHandRight_01
-    100048: jnt_BenHead_01
-    100050: jnt_BenKneeLeft_01
-    100052: jnt_BenKneeRight_01
-    100054: jnt_BenLegLeft_01
-    100056: jnt_BenLegRight_01
-    100058: jnt_BenMaster_01
-    100060: jnt_BenNeck_01
-    100062: jnt_BenRoot_01
-    100064: jnt_BenShoulderLeft_01
-    100066: jnt_BenShoulderRight_01
-    100068: jnt_BenSpine_01
-    100070: jnt_BenSpine_02
-    100072: jnt_BenSpine_03
-    100074: jnt_BenToeLeft_01
-    100076: jnt_BenToeRight_01
-    100078: Knees_LP
-    100080: Knuckles_LP
-    100082: Legs_LP
-    100084: Neck_LP
-    100086: Shorts_LP
-    100088: Thighs_LP
-    100090: Thumb_LP
-    100092: ThumbTip_LP
-    100094: Waist_LP
-    100096: Wrist_LP
+    100006: Eyes_LP
+    100008: Feet_LP
+    100010: Fingies_LP
+    100012: Forearm_LP
+    100014: Geo
+    100016: Hand01_LP
+    100018: Hand02_LP
+    100020: Head_LP
+    100022: jnt_BenAnkleLeft_01
+    100024: jnt_BenAnkleRight_01
+    100026: jnt_BenClavicalLeft_01
+    100028: jnt_BenClavicalRight_01
+    100030: jnt_BenElbowLeft_01
+    100032: jnt_BenElbowRight_01
+    100034: jnt_BenFingerLeft_01
+    100036: jnt_BenFingerRight_01
+    100038: jnt_BenFootLeft_01
+    100040: jnt_BenFootRight_01
+    100042: jnt_BenHandLeft_01
+    100044: jnt_BenHandRight_01
+    100046: jnt_BenHead_01
+    100048: jnt_BenKneeLeft_01
+    100050: jnt_BenKneeRight_01
+    100052: jnt_BenLegLeft_01
+    100054: jnt_BenLegRight_01
+    100056: jnt_BenMaster_01
+    100058: jnt_BenNeck_01
+    100060: jnt_BenRoot_01
+    100062: jnt_BenShoulderLeft_01
+    100064: jnt_BenShoulderRight_01
+    100066: jnt_BenSpine_01
+    100068: jnt_BenSpine_02
+    100070: jnt_BenSpine_03
+    100072: jnt_BenToeLeft_01
+    100074: jnt_BenToeRight_01
+    100076: Knees_LP
+    100078: Knuckles_LP
+    100080: Legs_LP
+    100082: Neck_LP
+    100084: Shorts_LP
+    100086: Thighs_LP
+    100088: Thumb_LP
+    100090: ThumbTip_LP
+    100092: Waist_LP
+    100094: Wrist_LP
     400000: //RootNode
     400002: Body_LP
     400004: Coat_LP
-    400006: ctrl_Master_01
-    400008: Eyes_LP
-    400010: Feet_LP
-    400012: Fingies_LP
-    400014: Forearm_LP
-    400016: Geo
-    400018: Hand01_LP
-    400020: Hand02_LP
-    400022: Head_LP
-    400024: jnt_BenAnkleLeft_01
-    400026: jnt_BenAnkleRight_01
-    400028: jnt_BenClavicalLeft_01
-    400030: jnt_BenClavicalRight_01
-    400032: jnt_BenElbowLeft_01
-    400034: jnt_BenElbowRight_01
-    400036: jnt_BenFingerLeft_01
-    400038: jnt_BenFingerRight_01
-    400040: jnt_BenFootLeft_01
-    400042: jnt_BenFootRight_01
-    400044: jnt_BenHandLeft_01
-    400046: jnt_BenHandRight_01
-    400048: jnt_BenHead_01
-    400050: jnt_BenKneeLeft_01
-    400052: jnt_BenKneeRight_01
-    400054: jnt_BenLegLeft_01
-    400056: jnt_BenLegRight_01
-    400058: jnt_BenMaster_01
-    400060: jnt_BenNeck_01
-    400062: jnt_BenRoot_01
-    400064: jnt_BenShoulderLeft_01
-    400066: jnt_BenShoulderRight_01
-    400068: jnt_BenSpine_01
-    400070: jnt_BenSpine_02
-    400072: jnt_BenSpine_03
-    400074: jnt_BenToeLeft_01
-    400076: jnt_BenToeRight_01
-    400078: Knees_LP
-    400080: Knuckles_LP
-    400082: Legs_LP
-    400084: Neck_LP
-    400086: Shorts_LP
-    400088: Thighs_LP
-    400090: Thumb_LP
-    400092: ThumbTip_LP
-    400094: Waist_LP
-    400096: Wrist_LP
+    400006: Eyes_LP
+    400008: Feet_LP
+    400010: Fingies_LP
+    400012: Forearm_LP
+    400014: Geo
+    400016: Hand01_LP
+    400018: Hand02_LP
+    400020: Head_LP
+    400022: jnt_BenAnkleLeft_01
+    400024: jnt_BenAnkleRight_01
+    400026: jnt_BenClavicalLeft_01
+    400028: jnt_BenClavicalRight_01
+    400030: jnt_BenElbowLeft_01
+    400032: jnt_BenElbowRight_01
+    400034: jnt_BenFingerLeft_01
+    400036: jnt_BenFingerRight_01
+    400038: jnt_BenFootLeft_01
+    400040: jnt_BenFootRight_01
+    400042: jnt_BenHandLeft_01
+    400044: jnt_BenHandRight_01
+    400046: jnt_BenHead_01
+    400048: jnt_BenKneeLeft_01
+    400050: jnt_BenKneeRight_01
+    400052: jnt_BenLegLeft_01
+    400054: jnt_BenLegRight_01
+    400056: jnt_BenMaster_01
+    400058: jnt_BenNeck_01
+    400060: jnt_BenRoot_01
+    400062: jnt_BenShoulderLeft_01
+    400064: jnt_BenShoulderRight_01
+    400066: jnt_BenSpine_01
+    400068: jnt_BenSpine_02
+    400070: jnt_BenSpine_03
+    400072: jnt_BenToeLeft_01
+    400074: jnt_BenToeRight_01
+    400076: Knees_LP
+    400078: Knuckles_LP
+    400080: Legs_LP
+    400082: Neck_LP
+    400084: Shorts_LP
+    400086: Thighs_LP
+    400088: Thumb_LP
+    400090: ThumbTip_LP
+    400092: Waist_LP
+    400094: Wrist_LP
     2100000: 01 - Default
     4300000: Body_LP
     4300002: Feet_LP
@@ -121,6 +119,7 @@ ModelImporter:
     4300032: Hand01_LP
     4300034: Hand02_LP
     4300036: Forearm_LP
+    7400000: BenBot_Hang
     9500000: //RootNode
     13700000: Body_LP
     13700002: Coat_LP
@@ -141,12 +140,8 @@ ModelImporter:
     13700032: ThumbTip_LP
     13700034: Waist_LP
     13700036: Wrist_LP
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 01 - Default
-    second: {fileID: 2100000, guid: 3cf526b3dc42d6742afe853598900656, type: 2}
+    2186277476908879412: ImportLogs
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -161,11 +156,18 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'jnt_BenFootLeft_01' has translation animation
+      that will be discarded.\n\t'jnt_BenFootLeft_01' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'jnt_BenFootRight_01'
+      has translation animation that will be discarded.\n\t'jnt_BenFootRight_01' is
+      inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'jnt_BenSpine_02'
+      has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
+    importConstraints: 1
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -173,11 +175,39 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: BenBot_Hang
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 3
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -198,7 +228,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.03
+    previousCalculatedGlobalScale: 0.01
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
@@ -209,7 +239,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   importAnimation: 1
-  copyAvatar: 0
+  copyAvatar: 1
   humanDescription:
     serializedVersion: 2
     human:
@@ -365,7 +395,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: jnt_BenFootLeft_01
+    - boneName: jnt_BenToeLeft_01
       humanName: LeftToes
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -373,7 +403,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: jnt_BenFootRight_01
+    - boneName: jnt_BenToeRight_01
       humanName: RightToes
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -395,11 +425,6 @@ ModelImporter:
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: ctrl_Master_01
-      parentName: BenBot_Rigged_Posed_01(Clone)
-      position: {x: -0.0028570427, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 45.043743, y: 45.043743, z: 45.043743}
     - name: Geo
       parentName: BenBot_Rigged_Posed_01(Clone)
       position: {x: -0, y: 0, z: 0}
@@ -410,9 +435,39 @@ ModelImporter:
       position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Feet_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
     - name: Coat_LP
       parentName: Geo
       position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Shorts_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Legs_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Knees_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Thighs_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Waist_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: -0.000013952636, z: -0.00003924179}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
     - name: Eyes_LP
@@ -420,9 +475,29 @@ ModelImporter:
       position: {x: 0.000017440794, y: 6.6531355e-12, z: -0.00003858776}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
-    - name: Feet_LP
+    - name: Head_LP
       parentName: Geo
-      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
+      position: {x: 0.000017440794, y: 0.000027905273, z: -0.00003858776}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Neck_LP
+      parentName: Geo
+      position: {x: 0.000017440794, y: 0.000027905273, z: -0.00003924179}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Wrist_LP
+      parentName: Geo
+      position: {x: 0.000022247543, y: -0.000009145889, z: -0.00003689632}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: ThumbTip_LP
+      parentName: Geo
+      position: {x: 0.0000065450686, y: -0.000019381809, z: -0.000033159984}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: Thumb_LP
+      parentName: Geo
+      position: {x: 0.00003146015, y: -0.000028079474, z: -0.0000498024}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
     - name: Fingies_LP
@@ -430,9 +505,9 @@ ModelImporter:
       position: {x: 0.000031489606, y: 0.000020467696, z: -0.00005887455}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
-    - name: Forearm_LP
+    - name: Knuckles_LP
       parentName: Geo
-      position: {x: 0.000017440794, y: -0.000013952636, z: -0.00003924179}
+      position: {x: 0.000025801239, y: -0.000022420567, z: -0.00006123173}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
     - name: Hand01_LP
@@ -445,61 +520,16 @@ ModelImporter:
       position: {x: 0.00003711906, y: -0.000033738383, z: -0.00003837307}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
-    - name: Head_LP
-      parentName: Geo
-      position: {x: 0.000017440794, y: 0.000027905273, z: -0.00003858776}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
-    - name: Knees_LP
-      parentName: Geo
-      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
-    - name: Knuckles_LP
-      parentName: Geo
-      position: {x: 0.000025801239, y: -0.000022420567, z: -0.00006123173}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
-    - name: Legs_LP
-      parentName: Geo
-      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
-    - name: Neck_LP
-      parentName: Geo
-      position: {x: 0.000017440794, y: 0.000027905273, z: -0.00003924179}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
-    - name: Shorts_LP
-      parentName: Geo
-      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
-    - name: Thighs_LP
-      parentName: Geo
-      position: {x: 0.000017440794, y: 0.000013952636, z: -0.00003924179}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
-    - name: Thumb_LP
-      parentName: Geo
-      position: {x: 0.00003146015, y: -0.000028079474, z: -0.0000498024}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
-    - name: ThumbTip_LP
-      parentName: Geo
-      position: {x: 0.0000065450686, y: -0.000019381809, z: -0.000033159984}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
-    - name: Waist_LP
+    - name: Forearm_LP
       parentName: Geo
       position: {x: 0.000017440794, y: -0.000013952636, z: -0.00003924179}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
-    - name: Wrist_LP
-      parentName: Geo
-      position: {x: 0.000022247543, y: -0.000009145889, z: -0.00003689632}
-      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-      scale: {x: 0.3186402, y: 0.3186402, z: 0.3186402}
+    - name: ctrl_Master_01
+      parentName: BenBot_Rigged_Posed_01(Clone)
+      position: {x: -0.0028570427, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 45.043743, y: 45.043743, z: 45.043743}
     - name: jnt_BenRoot_01
       parentName: BenBot_Rigged_Posed_01(Clone)
       position: {x: -0.0028570427, y: 2.9059951, z: -0.4366619}
@@ -575,6 +605,16 @@ ModelImporter:
       position: {x: 1.8318679e-17, y: 0.41939375, z: -0.018728305}
       rotation: {x: -0.027177688, y: 0, z: -0, w: 0.99963063}
       scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenNeck_01
+      parentName: jnt_BenSpine_03
+      position: {x: 1.6653344e-17, y: 0.34147888, z: -0.0073832152}
+      rotation: {x: 0.0074306903, y: -0, z: -0, w: 0.9999724}
+      scale: {x: 1, y: 1, z: 1}
+    - name: jnt_BenHead_01
+      parentName: jnt_BenNeck_01
+      position: {x: 4.038436e-17, y: 0.62529594, z: 0.09674011}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     - name: jnt_BenClavicalLeft_01
       parentName: jnt_BenSpine_03
       position: {x: -0.18241878, y: 0.16573091, z: 0.07778613}
@@ -625,16 +665,6 @@ ModelImporter:
       position: {x: -0.3731094, y: 1.2536522e-16, z: 0.023976877}
       rotation: {x: 0.37581158, y: 0.9266961, z: 7.975559e-17, w: -3.373195e-17}
       scale: {x: 1, y: 1, z: 1}
-    - name: jnt_BenNeck_01
-      parentName: jnt_BenSpine_03
-      position: {x: 1.6653344e-17, y: 0.34147888, z: -0.0073832152}
-      rotation: {x: 0.0074306903, y: -0, z: -0, w: 0.9999724}
-      scale: {x: 1, y: 1, z: 1}
-    - name: jnt_BenHead_01
-      parentName: jnt_BenNeck_01
-      position: {x: 4.038436e-17, y: 0.62529594, z: 0.09674011}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -646,7 +676,8 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: e3ffb88b81876e440a4ffb8c9dac11d8,
+    type: 3}
   animationType: 3
   humanoidOversampling: 1
   additionalBone: 0
