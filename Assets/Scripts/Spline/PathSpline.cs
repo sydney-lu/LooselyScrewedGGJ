@@ -9,21 +9,8 @@ public class PathSpline : BezierSpline
     public List<PathSpline> EndPaths;
     private void Start()
     {
-        //AveragePath();
         SortPaths();
     }
-
-    //private void AveragePath()
-    //{
-    //    Vector3[] temp = new Vector3[points.Length];
-    //    Debug.Log(GetPoint(0) + ":" + GetPoint(1));
-    //    for (int i = 0; i < temp.Length; i++)
-    //    {
-    //        temp[i] = GetPoint(i / temp.Length - 1);
-    //        Debug.Log(temp[i] + ":" + GetPoint(i / temp.Length - 1));
-    //    }
-    //    //points = temp;
-    //}
 
     private void SortPaths()
     {

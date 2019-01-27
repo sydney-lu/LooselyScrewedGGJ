@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
 public class Character : MonoBehaviour
 {
     [Header("Movement")]
@@ -34,6 +33,10 @@ public class Character : MonoBehaviour
 
     private float moveDistance;
 
+    private Vector3 pushDirection;
+    private bool pushing = false;
+    private Transform pushObject;
+
     private bool grounded;
     private bool flip;
 
@@ -63,19 +66,32 @@ public class Character : MonoBehaviour
         anim.SetFloat("Movment", Mathf.Abs(x));
 
         moveDistance = x * Time.deltaTime * moveSpeed / pathLength;
-        if (!grounded) moveDistance /= 1.5f;
 
-        if (flip == false && moveDistance < 0)
-            flip = true;
-        else if (flip == true && moveDistance > 0)
-            flip = false;
+        if (!pushing)
+        {
+            if (flip == false && moveDistance < 0)
+                flip = true;
+            else if (flip == true && moveDistance > 0)
+                flip = false;
+        }
 
         bool canMove = true;
-        if (flip) canMove = !isBlocked(transform.position + Vector3.up * 0.1f, -transform.forward, 0.6f) && !isBlocked(transform.position + Vector3.up * 1.3f, -transform.forward, 0.6f);
-        else canMove = !isBlocked(transform.position + Vector3.up * 0.1f, transform.forward, 0.6f) && !isBlocked(transform.position + Vector3.up * 1.3f, transform.forward, 0.6f);
+        if (flip) canMove = !isBlocked(transform.position + Vector3.up * 0.1f, -transform.forward, 0.8f) && !isBlocked(transform.position + Vector3.up * 2, -transform.forward, 0.8f);
+        else canMove = !isBlocked(transform.position + Vector3.up * 0.1f, transform.forward, 0.8f) && !isBlocked(transform.position + Vector3.up * 2, transform.forward, 0.8f);
 
-        grounded = isBlocked(transform.position + Vector3.up * 0.5f + Vector3.forward * 0.2f, Vector3.down, 0.55f)
-            && isBlocked(transform.position + Vector3.up * 0.5f - Vector3.forward * 0.2f, Vector3.down, 0.55f);
+        if (!grounded) moveDistance *= 0.75f;
+        if (pushing)
+        {
+            float dot = Vector3.Dot(transform.forward, pushDirection);
+            anim.SetFloat("Pull", dot * x);
+            moveDistance *= 0.5f;
+            if (!grounded || Mathf.Abs(transform.position.y - pushObject.position.y) > 3)
+                StopPushing();
+        }
+        
+        grounded = GroundCheck(transform.position + Vector3.up * 0.5f + Vector3.forward * 0.2f, 0.55f)
+            && GroundCheck(transform.position + Vector3.up * 0.5f - Vector3.forward * 0.2f, 0.55f);
+            
         anim.SetBool("Grounded", grounded);
         if (canMove)
         {
@@ -118,11 +134,22 @@ public class Character : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = new Ray(start, direction);
+        Debug.DrawRay(ray.origin, ray.direction, Color.red);
         if (Physics.Raycast(ray, out hit, range))
         {
-            if (hit.collider.gameObject.isStatic)
+            if (hit.transform != pushObject)
                 return true;
         }
+        return false;
+    }
+
+    private bool GroundCheck(Vector3 start, float range)
+    {
+        RaycastHit hit;
+        Ray ray = new Ray(start, Vector3.down);
+        Debug.DrawRay(ray.origin, ray.direction, Color.red);
+        if (Physics.Raycast(ray, out hit, range))
+            return true;
         return false;
     }
 
@@ -131,5 +158,34 @@ public class Character : MonoBehaviour
         grounded = false;
         m_rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         anim.SetTrigger("Jump");
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pushable"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (pushing) StopPushing();
+                else StartPushing(other.transform);
+            }
+        }
+    }
+
+    private void StartPushing(Transform other)
+    {
+        Debug.Log("StartPushing");
+        pushDirection = transform.forward;
+        pushObject = other;
+        pushObject.parent = transform;
+        pushing = true;
+        anim.SetBool("Push", true);
+    }
+
+    private void StopPushing()
+    {
+        Debug.Log("StopPushing");
+        pushObject.parent = null;
+        pushing = false;
+        anim.SetBool("Push", false);
     }
 }

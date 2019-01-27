@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Animator))]
 public class IKController : MonoBehaviour
 {
     protected Animator anim;
@@ -27,7 +26,7 @@ public class IKController : MonoBehaviour
     //Unity Functions
     protected virtual void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         mainCamera = Camera.main.transform;
     }
     protected virtual void OnDrawGizmos()
