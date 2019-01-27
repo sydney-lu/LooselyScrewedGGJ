@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1587451211}
   - component: {fileID: 1587451210}
   - component: {fileID: 1587451209}
-  - component: {fileID: 1587451208}
+  - component: {fileID: 96475407}
+  - component: {fileID: 7299879812566586316}
   m_Layer: 0
   m_Name: PushableRock
   m_TagString: Pushable
@@ -93,9 +94,23 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1587451208
+--- !u!114 &96475407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587451207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52b55ca6c6995049b723e42650b9ce2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: {fileID: 0}
+  splineWeight: 0.23
+--- !u!65 &7299879812566586316
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,5 +121,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.5, y: 3.5, z: 4}
-  m_Center: {x: 0, y: -0.0012748245, z: 2.448763}
+  m_Size: {x: 4.5226703, y: 4.52522, z: 4.728402}
+  m_Center: {x: 0, y: -0.0012748241, z: 2.4487624}

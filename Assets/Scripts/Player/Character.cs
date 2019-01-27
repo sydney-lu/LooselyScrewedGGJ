@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Character : MonoBehaviour
 {
@@ -36,12 +35,8 @@ public class Character : MonoBehaviour
 
     private Vector3 pushDirection;
     private bool pushing = false;
-    private Transform pushObject;
+    private ConstrainToSpline pushObject;
 
-    private int ObjectivesCollected;
-    public int ObjectsNeeded;
-
-    public string SceneToMove;
     private bool grounded;
     private bool flip;
 
@@ -63,11 +58,6 @@ public class Character : MonoBehaviour
             transform.LookAt(splinePoint + path.GetDirection(splineWeight));
         }
         else enabled = false;
-
-        ObjectivesCollected = 0;
-
-        if (ObjectsNeeded <= 0) ObjectsNeeded = 1;
-        if (SceneToMove == "") SceneToMove = "Platformer";
     }
 
     private void FixedUpdate()
@@ -86,8 +76,8 @@ public class Character : MonoBehaviour
         }
 
         bool canMove = true;
-        if (flip) canMove = !isBlocked(transform.position + Vector3.up * 0.1f, -transform.forward, 0.8f) && !isBlocked(transform.position + Vector3.up * 2, -transform.forward, 0.8f);
-        else canMove = !isBlocked(transform.position + Vector3.up * 0.1f, transform.forward, 0.8f) && !isBlocked(transform.position + Vector3.up * 2, transform.forward, 0.8f);
+        if (flip) canMove = !isBlocked(transform.position + Vector3.up * 0.5f, -transform.forward, 0.8f) && !isBlocked(transform.position + Vector3.up * 2, -transform.forward, 0.8f);
+        else canMove = !isBlocked(transform.position + Vector3.up * 0.5f, transform.forward, 0.8f) && !isBlocked(transform.position + Vector3.up * 2, transform.forward, 0.8f);
 
         if (!grounded) moveDistance *= 0.75f;
         if (pushing)
@@ -95,7 +85,8 @@ public class Character : MonoBehaviour
             float dot = Vector3.Dot(transform.forward, pushDirection);
             anim.SetFloat("Pull", dot * x);
             moveDistance *= 0.5f;
-            if (!grounded || Mathf.Abs(transform.position.y - pushObject.position.y) > 3)
+            if (canMove) pushObject.splineWeight += moveDistance;
+            if (!grounded || Mathf.Abs(transform.position.y - pushObject.transform.position.y) > 3)
                 StopPushing();
         }
         
@@ -185,8 +176,8 @@ public class Character : MonoBehaviour
     {
         Debug.Log("StartPushing");
         pushDirection = transform.forward;
-        pushObject = other;
-        pushObject.parent = transform;
+        pushObject = other.GetComponent<ConstrainToSpline>();
+        pushObject.transform.parent = transform;
         pushing = true;
         anim.SetBool("Push", true);
     }
@@ -194,33 +185,8 @@ public class Character : MonoBehaviour
     private void StopPushing()
     {
         Debug.Log("StopPushing");
-        pushObject.parent = null;
+        pushObject.transform.parent = null;
         pushing = false;
         anim.SetBool("Push", false);
-    }
-
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.name == "Objective")
-        {
-            ++ObjectivesCollected;
-            Destroy(col.gameObject);
-        }
-
-        if (col.gameObject.name == "ShipWinCollider")
-        {
-            if (ObjectivesCollected == ObjectsNeeded)
-            {
-                Debug.Log("You Win");
-                SceneManager.LoadScene(SceneToMove);
-            }
-        }
-
-        if (col.gameObject.name == "KillFloor")
-        {
-            Scene m_Scene = SceneManager.GetActiveScene();
-
-            SceneManager.LoadScene(m_Scene.name);
-        }
     }
 }

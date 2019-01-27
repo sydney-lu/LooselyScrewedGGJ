@@ -36,19 +36,13 @@ public class Platform : MonoBehaviour
         moving = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.transform)
-        {
-
-        }
+        collision.gameObject.transform.parent = transform;
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.transform)
-        {
-
-        }
+        collision.gameObject.transform.parent = null;
     }
 }
