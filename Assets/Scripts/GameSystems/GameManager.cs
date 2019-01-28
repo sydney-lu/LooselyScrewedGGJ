@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public static PlayerController player;
 
     private string m_mainMenuScene = "MainMenu";
-    private string m_playScene = "PlayScene";
+    private string m_playScene = "Platformer";
     
     public Canvas m_hudCanvas;
     public Canvas m_pauseCanvas;
@@ -137,6 +137,7 @@ public class GameManager : MonoBehaviour
     public void LoadScene(string name)
     {
         SceneManager.LoadScene(name);
+        m_hudCanvas.enabled = !m_hudCanvas.enabled;
     }
     public void LoadScene(int index)
     {
