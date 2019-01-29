@@ -184,7 +184,7 @@ public class Character : MonoBehaviour
             Destroy(col.gameObject);
         }
 
-        if (col.gameObject.name == "ShipWinCollider")
+        if (col.gameObject.name == "Ship")
         {
             if (ObjectivesCollected == ObjectsNeeded)
             {
@@ -195,9 +195,10 @@ public class Character : MonoBehaviour
 
         if (col.gameObject.name == "KillFloor")
         {
-            Scene m_Scene = SceneManager.GetActiveScene();
-
-            SceneManager.LoadScene(m_Scene.name);
+            Debug.Log("YouDied");
+            //Scene m_Scene = SceneManager.GetActiveScene();
+            //SceneManager.LoadScene(m_Scene.name);
+            SceneManager.LoadScene("MainMenu");
         }
     }
 

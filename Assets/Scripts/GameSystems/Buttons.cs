@@ -23,6 +23,7 @@ public class Buttons : MonoBehaviour
     public void OnStartPress()
     {
         CanvasObject.enabled = !CanvasObject.enabled;
+        Debug.Log("GO TO PLATFORMER");
         SceneManager.LoadScene("Platformer");
     }
 
@@ -62,17 +63,17 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene("Settings");
     }
 
-    public void OnQuitPress()
-    {
-    #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-    #else
-            Application.Quit();
-    #endif
-    }
-
     public void OnSlide(float VolumeValue)
     {
         CurrentVolume = VolumeValue;
+    }
+
+    public void OnQuitPress()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
     }
 }
