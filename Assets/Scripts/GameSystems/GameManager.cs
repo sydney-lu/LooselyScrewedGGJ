@@ -111,96 +111,96 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Scene Managment
-    public void MainMenu()
-    {
-        SceneManager.LoadScene(m_mainMenuScene);
-    }
+    //public void MainMenu()
+    //{
+    //    SceneManager.LoadScene(m_mainMenuScene);
+    //}
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.sceneUnloaded += OnSceneUnloaded;
-    }
+    //private void OnEnable()
+    //{
+    //    SceneManager.sceneLoaded += OnSceneLoaded;
+    //    SceneManager.sceneUnloaded += OnSceneUnloaded;
+    //}
 
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-        SceneManager.sceneUnloaded -= OnSceneUnloaded;
-    }
+    //private void OnDisable()
+    //{
+    //    SceneManager.sceneLoaded -= OnSceneLoaded;
+    //    SceneManager.sceneUnloaded -= OnSceneUnloaded;
+    //}
 
-    public void Continue()
-    {
-        int sceneIndex = PlayerPrefs.GetInt("ContinueScene");
-        LoadScene(sceneIndex);
-    }
+    //public void Continue()
+    //{
+    //    int sceneIndex = PlayerPrefs.GetInt("ContinueScene");
+    //    LoadScene(sceneIndex);
+    //}
 
-    public void LoadScene(string name)
-    {
-        SceneManager.LoadScene(name);
-        m_hudCanvas.enabled = !m_hudCanvas.enabled;
-    }
-    public void LoadScene(int index)
-    {
-        SceneManager.LoadScene(index);
-    }
+    //public void LoadScene(string name)
+    //{
+    //    SceneManager.LoadScene(name);
+    //    m_hudCanvas.enabled = !m_hudCanvas.enabled;
+    //}
+    //public void LoadScene(int index)
+    //{
+    //    SceneManager.LoadScene(index);
+    //}
 
-    public void AddScene(string name)
-    {
-        Debug.Log("GameManager:AddSceneByName (" + name + ")", this);
-        SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive);
-    }
-    public void AddScene(int index)
-    {
-        Debug.Log("GameManager:AddSceneByIndex (" + index + ")", this);
-        SceneManager.LoadSceneAsync(index, LoadSceneMode.Additive);
-    }
+    //public void AddScene(string name)
+    //{
+    //    Debug.Log("GameManager:AddSceneByName (" + name + ")", this);
+    //    SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive);
+    //}
+    //public void AddScene(int index)
+    //{
+    //    Debug.Log("GameManager:AddSceneByIndex (" + index + ")", this);
+    //    SceneManager.LoadSceneAsync(index, LoadSceneMode.Additive);
+    //}
 
-    public void UnloadScene(string name)
-    {
-        Debug.Log("GameManager:UnloadSceneByName (" + name + ")", this);
-        if (SceneManager.GetSceneByName(name).isLoaded)
-            SceneManager.UnloadSceneAsync(name);
-    }
-    public void UnloadScene(int index)
-    {
-        Debug.Log("GameManager:UnloadSceneByIndex (" + index + ")", this);
-        if (SceneManager.GetSceneAt(index).isLoaded)
-            SceneManager.UnloadSceneAsync(index);
-    }
+    //public void UnloadScene(string name)
+    //{
+    //    Debug.Log("GameManager:UnloadSceneByName (" + name + ")", this);
+    //    if (SceneManager.GetSceneByName(name).isLoaded)
+    //        SceneManager.UnloadSceneAsync(name);
+    //}
+    //public void UnloadScene(int index)
+    //{
+    //    Debug.Log("GameManager:UnloadSceneByIndex (" + index + ")", this);
+    //    if (SceneManager.GetSceneAt(index).isLoaded)
+    //        SceneManager.UnloadSceneAsync(index);
+    //}
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (this != Instance)
-            return;
+    //private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    //{
+    //    if (this != Instance)
+    //        return;
 
-        // Main Menu Scene
-        else if (scene.name == m_mainMenuScene)
-        {
-            m_paused = false;
-            ToggleCursor(true);
-            Time.timeScale = 1;
-            if (player) Destroy(player.gameObject);
-        }
+    //    // Main Menu Scene
+    //    else if (scene.name == m_mainMenuScene)
+    //    {
+    //        m_paused = false;
+    //        ToggleCursor(true);
+    //        Time.timeScale = 1;
+    //        if (player) Destroy(player.gameObject);
+    //    }
 
-        // Base Play Scene 
-        else if (scene.name == m_playScene)
-        {
-            //if (!player) SpawnPlayer();
-            ToggleCursor(false);
-        }
+    //    // Base Play Scene 
+    //    else if (scene.name == m_playScene)
+    //    {
+    //        //if (!player) SpawnPlayer();
+    //        ToggleCursor(false);
+    //    }
 
-        // LevelScene Added To PlayScene
-        else
-        {
-            string currentLevel = scene.name;
-            PlayerPrefs.SetString("ContinueScene", currentLevel);
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName("PlayScene"));
-        }
-    }
+    //    // LevelScene Added To PlayScene
+    //    else
+    //    {
+    //        string currentLevel = scene.name;
+    //        PlayerPrefs.SetString("ContinueScene", currentLevel);
+    //        SceneManager.SetActiveScene(SceneManager.GetSceneByName("PlayScene"));
+    //    }
+    //}
 
-    private void OnSceneUnloaded(Scene scene)
-    {
-    }
+    //private void OnSceneUnloaded(Scene scene)
+    //{
+    //}
     #endregion
 
     #region Main
